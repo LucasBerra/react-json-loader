@@ -1,0 +1,533 @@
+@font-face {
+  font-family: "Boarding";
+  src: url("font/Boarding PersonalUse.ttf");
+}
+
+body {
+  background: linear-gradient(135deg, #fcead4, #f3eade) fixed;
+  min-height: 100vh;
+}
+
+header {
+  background-color: #ffdbaf;
+  border-bottom: 2px dotted burlywood;
+}
+
+header h1 {
+  display: inline;
+  font-family: "Boarding";
+  font-weight: 900;
+  font-size: 40px;
+  margin: 0;
+}
+
+header span {
+  margin-left: 10px;
+  font-size: larger;
+  font-style: italic;
+}
+
+header a {
+  padding: 16px;
+  text-decoration: none;
+  color: #212529;
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+header a:hover {
+  color: #212529;
+}
+
+@media (max-width: 991.98px) {
+  header h1 {
+    font-size: 38px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  header h1 {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  header h1 {
+    display: block;
+  }
+  header span {
+    margin: 0;
+  }
+}
+
+main {
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+footer {
+  font-style: italic;
+  color: #212529;
+  margin-bottom: 20px;
+}
+
+footer a {
+  color: #212529;
+}
+
+footer a:hover {
+  color: #212529;
+}
+
+@media (max-width: 575.98px) {
+  footer {
+    text-align: center;
+  }
+}
+
+/***********
+LANDING PAGE
+***********/
+#index-div {
+  background-color: #fcfcfc;
+  border-radius: 5px;
+  padding: 16px;
+  margin: 20px auto;
+  -webkit-box-shadow: grey 0 0 2px;
+          box-shadow: grey 0 0 2px;
+  background: white;
+  width: 900px;
+  max-width: 94vw;
+  text-align: center;
+}
+
+#index-div h1 {
+  font-family: "Boarding";
+  font-weight: 900;
+  font-size: 48px;
+  margin: 0;
+}
+
+#index-div h3 {
+  margin: 0 0 16px 20px;
+  text-align: left;
+}
+
+#index-div p {
+  font-size: medium;
+}
+
+#index-div a {
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 20px;
+  width: 22%;
+  height: 120px;
+  background: rgba(255, 255, 255, 0.6);
+  margin: 10px;
+  color: #ffffff;
+  -webkit-box-shadow: grey 0 2px 5px;
+          box-shadow: grey 0 2px 5px;
+  -webkit-transition: -webkit-transform 100ms ease-in-out;
+  transition: -webkit-transform 100ms ease-in-out;
+  transition: transform 100ms ease-in-out;
+  transition: transform 100ms ease-in-out, -webkit-transform 100ms ease-in-out;
+}
+
+#index-div a:hover {
+  color: #ffffff;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+#index-div a:hover i {
+  -webkit-transition: color 150ms ease-in-out;
+  transition: color 150ms ease-in-out;
+  color: #ffffff;
+}
+
+#index-div a i {
+  font-size: 2em;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+#index-div #women-clothing {
+  background-color: #e65874;
+}
+
+#index-div #men-clothing {
+  background-color: #6e5bdb;
+}
+
+#index-div #electronics {
+  background-color: #52d498;
+}
+
+#index-div #jewelery {
+  background-color: #f5bc53;
+}
+
+@media (max-width: 991.98px) {
+  #index-div {
+    width: 600px;
+  }
+  #index-div a {
+    width: 44%;
+    height: 110px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  #index-div {
+    width: 500px;
+  }
+  #index-div h1 {
+    font-size: 38px;
+  }
+  #index-div a {
+    width: 44%;
+    height: 90px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  #index-div {
+    width: 90%;
+  }
+  #index-div a {
+    width: 100%;
+  }
+}
+
+/*************
+CATEGORY PAGES
+*************/
+#title {
+  background-color: #fcfcfc;
+  border-radius: 20px 0;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 16px;
+  margin: 20px auto;
+  -webkit-box-shadow: grey 0 0 2px;
+          box-shadow: grey 0 0 2px;
+}
+
+#title h2 {
+  display: inline;
+  font-family: "Boarding";
+  font-weight: bolder;
+  font-size: 38px;
+}
+
+#title span {
+  display: inline-block;
+}
+
+#title button {
+  margin-right: 16px;
+}
+
+@media (max-width: 767.98px) {
+  #title h2 {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  #title {
+    padding: 12px;
+  }
+  #title span {
+    display: block;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 5px auto 0;
+  }
+}
+
+#list-btn {
+  border-radius: 16px 0;
+  margin: 20px 0;
+}
+
+.hidden {
+  display: none;
+}
+
+.loading-style {
+  border-radius: 5px;
+  background-color: #fff890;
+  padding: 5px;
+  font-size: 1.2rem;
+  margin: 0 0 0 20px;
+}
+
+@media (max-width: 575.98px) {
+  .loading-style {
+    font-size: 1rem;
+  }
+}
+
+#content {
+  display: block;
+  margin: 0 auto;
+}
+
+#targetContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: auto;
+  max-width: 1084px;
+  padding: 0px;
+  background-color: white;
+  border: 2px solid gainsboro;
+  border-radius: 5px;
+  margin: 0 auto 64px;
+}
+
+.item-loader {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 45px 60px;
+  margin: 74px auto;
+  background-color: white;
+  border: 2px solid gainsboro;
+}
+
+.listItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 540px;
+  padding: 16px;
+  height: 220px;
+  border: 1px solid gainsboro;
+  text-decoration: none;
+  color: #212529;
+  cursor: pointer;
+}
+
+.listItem:hover {
+  color: #212529;
+}
+
+.listItem:hover h4 {
+  color: #205f9e;
+}
+
+.listItem h4 {
+  font-size: larger;
+}
+
+.listItem p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.listItem img {
+  max-width: 120px;
+  max-height: 120px;
+  display: block;
+  margin: 0 auto;
+}
+
+#listItem--img {
+  display: block;
+  max-height: 120px;
+  min-width: 130px;
+}
+
+@media (max-width: 1199.98px) {
+  #targetContainer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+}
+
+@media (max-width: 1199.98px) and (min-width: 992px) {
+  .listItem {
+    height: 200px;
+    width: 700px;
+  }
+  .listItem img {
+    max-width: 140px;
+    max-height: 140px;
+  }
+  #listItem--img {
+    max-height: 140px;
+    min-width: 150px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .listItem {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    height: auto;
+    width: 90vw;
+  }
+  .listItem img {
+    max-width: 120px;
+    max-height: 120px;
+    padding-bottom: 20px;
+  }
+}
+
+.itemBody {
+  display: block;
+  width: 740px;
+  padding: 20px;
+}
+
+.itemBody img {
+  display: block;
+  max-height: 260px;
+  max-width: 260px;
+  margin: 0 auto 20px;
+}
+
+.itemBody p {
+  padding-left: 20px;
+  text-indent: 6px;
+}
+
+@media (max-width: 991.98px) {
+  .itemBody {
+    width: 600px;
+  }
+  .itemBody img {
+    max-height: 240px;
+    max-width: 240px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .itemBody {
+    width: 90vw;
+  }
+  .itemBody img {
+    max-height: 180px;
+    max-width: 180px;
+  }
+  .itemBody p {
+    padding-left: 10px;
+  }
+}
+
+/********
+  LOADER
+*********/
+.lds-facebook {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.lds-facebook div {
+  display: inline-block;
+  position: absolute;
+  left: 8px;
+  width: 16px;
+  background: lightgray;
+  -webkit-animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+          animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+}
+
+.lds-facebook div:nth-child(1) {
+  left: 8px;
+  -webkit-animation-delay: -0.24s;
+          animation-delay: -0.24s;
+}
+
+.lds-facebook div:nth-child(2) {
+  left: 32px;
+  -webkit-animation-delay: -0.12s;
+          animation-delay: -0.12s;
+}
+
+.lds-facebook div:nth-child(3) {
+  left: 56px;
+  -webkit-animation-delay: 0;
+          animation-delay: 0;
+}
+
+@-webkit-keyframes lds-facebook {
+  0% {
+    top: 8px;
+    height: 64px;
+  }
+  50%,
+  100% {
+    top: 24px;
+    height: 32px;
+  }
+}
+
+@keyframes lds-facebook {
+  0% {
+    top: 8px;
+    height: 64px;
+  }
+  50%,
+  100% {
+    top: 24px;
+    height: 32px;
+  }
+}
+
+/*
+BREAKPOINTS
+*/
+/*# sourceMappingURL=style.css.map */
