@@ -308,7 +308,7 @@ CATEGORY PAGES
   max-width: 1084px;
   padding: 0px;
   background-color: white;
-  border: 2px solid gainsboro;
+  border: 1px solid #c7c7c7;
   border-radius: 5px;
   margin: 0 auto 64px;
 }
@@ -329,7 +329,7 @@ CATEGORY PAGES
   padding: 45px 60px;
   margin: 74px auto;
   background-color: white;
-  border: 2px solid gainsboro;
+  border: 1px solid #c7c7c7;
 }
 
 .listItem {

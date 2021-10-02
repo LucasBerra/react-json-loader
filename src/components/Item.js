@@ -35,10 +35,10 @@ const Item = () => {
         )}
 
         <div id="content">
-          <div id="targetContainer">
-            {!loading && (
+          {!loading && (
+            <div id="targetContainer">
               <div className="itemBody">
-                <img src={data.image} />
+                <img src={data.image} alt={data.title} />
 
                 <div>
                   <h4>{data.title}</h4>
@@ -50,8 +50,8 @@ const Item = () => {
                   <h5>Price: US${data.price}</h5>
                 </div>
               </div>
-            )}
-          </div>
+            </div>
+          )}
         </div>
       </main>
 
