@@ -13,7 +13,9 @@ const titleCase = (str) => {
 };
 
 const Category = () => {
-  let { pageCategory } = useParams();
+  const { category } = useParams();
+
+  let pageCategory = category;
   if (pageCategory === "women-clothing") {
     pageCategory = "women's clothing";
   } else if (pageCategory === "men-clothing") {
@@ -34,7 +36,7 @@ const Category = () => {
           "rgb(194, 243, 194)";
       })
       .catch((err) => console.log("An error has occured: ", err));
-  }, []);
+  }, [pageCategory]);
 
   return (
     <main>

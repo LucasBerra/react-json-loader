@@ -17,7 +17,7 @@ const Item = () => {
         setLoading(false);
       })
       .catch((err) => console.log("An error has occured: ", err));
-  }, []);
+  }, [itemId]);
 
   return (
     <>

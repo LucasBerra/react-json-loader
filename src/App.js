@@ -10,7 +10,7 @@ function App() {
     <Router>
       <Header />
       <Route path="/" exact children={<Homepage />} />
-      <Route path="/:pageCategory" exact children={<Category />} />
+      <Route path="/:category" exact children={<Category />} />
       <Route path="/item/:itemId" children={<Item />} />
     </Router>
   );
