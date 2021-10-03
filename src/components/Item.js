@@ -1,31 +1,24 @@
-import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-
-const url = "https://fakestoreapi.com/products";
+import { useState, useEffect, useContext } from "react";
+import { Context } from "../App";
 
 const Item = () => {
+  const { data } = useContext(Context);
   const { itemId } = useParams();
-  const [data, setData] = useState();
-  const [loading, setLoading] = useState(true);
+  const [itemData, setItemData] = useState();
 
   useEffect(() => {
-    fetch(url)
-      .then((res) => res.json())
-      .then((json) => {
-        json = json.filter((item) => parseInt(itemId) === item.id);
-        setData(json[0]);
-        setLoading(false);
-      })
-      .catch((err) => console.log("An error has occured: ", err));
-  }, [itemId]);
+    const filter = data.filter((i) => parseInt(itemId) === i.id);
+    setItemData(filter[0]);
+  }, [data, itemId]);
 
   return (
     <>
       <main>
-        {!loading && (
+        {itemData && (
           <div>
             <Link
-              to={`/${data.category}`}
+              to={`/${itemData.category}`}
               id="list-btn"
               className="btn btn-secondary"
             >
@@ -35,19 +28,19 @@ const Item = () => {
         )}
 
         <div id="content">
-          {!loading && (
+          {itemData && (
             <div id="targetContainer">
               <div className="itemBody">
-                <img src={data.image} alt={data.title} />
+                <img src={itemData.image} alt={itemData.title} />
 
                 <div>
-                  <h4>{data.title}</h4>
-                  <h5>-{data.category}-</h5>
+                  <h4>{itemData.title}</h4>
+                  <h5>-{itemData.category}-</h5>
                   <hr />
                   <h6>Description:</h6>
-                  <p>{data.description}</p>
+                  <p>{itemData.description}</p>
                   <hr />
-                  <h5>Price: US${data.price}</h5>
+                  <h5>Price: US${itemData.price}</h5>
                 </div>
               </div>
             </div>
@@ -55,7 +48,7 @@ const Item = () => {
         </div>
       </main>
 
-      {loading && (
+      {!itemData && (
         <div className="item-loader">
           <div className="lds-facebook">
             <div></div>

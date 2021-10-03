@@ -1,7 +1,6 @@
 import { Link, useParams } from "react-router-dom";
-import { useState, useEffect } from "react";
-
-const url = "https://fakestoreapi.com/products";
+import { useState, useEffect, useContext } from "react";
+import { Context } from "../App";
 
 const titleCase = (str) => {
   var splitString = str.toLowerCase().split(" ");
@@ -13,7 +12,9 @@ const titleCase = (str) => {
 };
 
 const Category = () => {
+  const { data, loading } = useContext(Context);
   const { category } = useParams();
+  const [categoryData, setCategoryData] = useState();
 
   let pageCategory = category;
   if (pageCategory === "women-clothing") {
@@ -22,42 +23,34 @@ const Category = () => {
     pageCategory = "men's clothing";
   }
 
-  const [data, setData] = useState();
-  const [loading, setLoading] = useState(true);
-
   useEffect(() => {
-    fetch(url)
-      .then((res) => res.json())
-      .then((json) => {
-        json = json.filter((item) => item.category === pageCategory);
-        setData(json);
-        setLoading(false);
-        document.querySelector("#loading").style.backgroundColor =
-          "rgb(194, 243, 194)";
-      })
-      .catch((err) => console.log("An error has occured: ", err));
-  }, [pageCategory]);
+    if (!loading) {
+      setCategoryData(data.filter((i) => i.category === pageCategory));
+      document.querySelector("#loading").style.backgroundColor =
+        "rgb(194, 243, 194)";
+    }
+  }, [data, loading, pageCategory]);
 
   return (
     <main>
       <div id="title">
         <h2 id="page-value">{titleCase(pageCategory)}</h2>
         <span id="loading" className="loading-style">
-          {loading ? "Loading..." : `${data.length} items.`}
+          {categoryData ? `${categoryData.length} items.` : "Loading..."}
         </span>
       </div>
 
       <div id="content">
         <div id="targetContainer">
-          {loading && (
+          {!categoryData && (
             <div className="lds-facebook">
               <div></div>
               <div></div>
               <div></div>
             </div>
           )}
-          {!loading &&
-            data.map((item) => {
+          {categoryData &&
+            categoryData.map((item) => {
               const { id, title, price, description, image } = item;
 
               return (
