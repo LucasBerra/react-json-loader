@@ -3,14 +3,29 @@ import { useState, useEffect, useContext } from "react";
 import { Context } from "../App";
 
 const Item = () => {
-  const { data } = useContext(Context);
+  const { data, loading } = useContext(Context);
   const { itemId } = useParams();
   const [itemData, setItemData] = useState();
+  const [pageCategory, setPageCategory] = useState();
 
   useEffect(() => {
     const filter = data.filter((i) => parseInt(itemId) === i.id);
     setItemData(filter[0]);
   }, [data, itemId]);
+
+  useEffect(() => {
+    if (itemData) {
+      const currentCategory = itemData.category;
+
+      if (currentCategory === "women's clothing") {
+        setPageCategory("women-clothing");
+      } else if (currentCategory === "men's clothing") {
+        setPageCategory("men-clothing");
+      } else {
+        setPageCategory(currentCategory);
+      }
+    }
+  }, [itemData]);
 
   return (
     <>
@@ -18,7 +33,7 @@ const Item = () => {
         {itemData && (
           <div>
             <Link
-              to={`/${itemData.category}`}
+              to={`/${pageCategory}`}
               id="list-btn"
               className="btn btn-secondary"
             >
