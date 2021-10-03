@@ -3,7 +3,7 @@ import { useState, useEffect, useContext } from "react";
 import { Context } from "../App";
 
 const Item = () => {
-  const { data, loading } = useContext(Context);
+  const { data } = useContext(Context);
   const { itemId } = useParams();
   const [itemData, setItemData] = useState();
   const [pageCategory, setPageCategory] = useState();
